@@ -100,10 +100,3 @@ wwd@DESKTOP-PJ0A953:~$ exit
 exit
 
 Script done on 2022-03-23 18:50:21-04:00 [COMMAND_EXIT_CODE="0"]
-
-
-
-
-
-
-
