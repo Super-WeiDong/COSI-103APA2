@@ -21,6 +21,17 @@ def to_tran_dict_list(tran_tuples):
     ''' convert a list of transaction tuples into a list of dictionaries'''
     return [to_tran_dict(tran) for tran in tran_tuples]
 
+'''Written by Jingqian Cheng'''
+def to_tran_dict2(tran_tuple):
+    ''' helper method for group by situations'''
+    tran = {'group_by':tran_tuple[0], 'amount':tran_tuple[1]}
+    return tran
+
+'''Written by Jingqian Cheng'''
+def to_tran_dict_list2(tran_tuples):
+    ''' helper method for group by situations'''
+    return [to_tran_dict2(tran) for tran in tran_tuples]
+
 class Transaction():
     ''' Transaction represents a table of transactions'''
 
@@ -58,3 +69,21 @@ class Transaction():
         con.commit()
         con.close()
         return last_rowid[0]
+    
+    '''Written by Jingqian Cheng'''
+    def delete(self, rowid):
+        con= sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute('''DELETE FROM transactions WHERE rowid=(?);''',(rowid,))
+        con.commit()
+        con.close()
+
+    '''Written by Jingqian Cheng'''
+    def transactions_by_date(self):
+        con= sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute('''SELECT date, sum(amount) FROM transactions GROUP BY date''')
+        tuples = cur.fetchall()
+        con.commit()
+        con.close()
+        return to_tran_dict_list2(tuples)

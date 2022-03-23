@@ -89,6 +89,13 @@ def process_choice(choice):
         description = input("transaction description: ")
         tran = {'amount':amount,'category':cate,'date':date,'description':description}
         transactions.add(tran)
+    elif choice=='6':
+        print("deleting transaction")
+        rowid = int(input("rowid: "))
+        transactions.delete(rowid)
+    elif choice=='7':
+        res = transactions.transactions_by_date()
+        print_transactions_groupby_date(res)
     else:
         print("choice",choice,"not yet implemented")
 
@@ -122,6 +129,19 @@ def print_transactions(items):
     for item in items:
         values = tuple(item.values()) 
         print("%-10s %-10d %-10s %-10d %-30s"%values)
+
+def print_transactions_groupby_date(items):
+    ''' helper method when group by date '''
+    if len(items)==0:
+        print('no items to print')
+        return
+    print('\n')
+    print("%-10s %-10s"%(
+        'date','amount'))
+    print('-'*50)
+    for item in items:
+        values = tuple(item.values()) 
+        print("%-10s %-10d"%values)
 
 def print_category(cat):
     print("%-3d %-10s %-30s"%(cat['rowid'],cat['name'],cat['desc']))
