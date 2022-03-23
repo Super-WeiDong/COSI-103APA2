@@ -85,7 +85,7 @@ def process_choice(choice):
     elif choice=='5':
         amount = int(input("transaction amount: "))
         cate = input("transaction category: ")
-        date = int(input("transaction date: "))
+        date = int(input("transaction date (yyyymmdd): "))
         description = input("transaction description: ")
         tran = {'amount':amount,'category':cate,'date':date,'description':description}
         transactions.add(tran)

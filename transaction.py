@@ -44,7 +44,8 @@ class Transaction():
         con.commit()
         con.close()
         return to_tran_dict_list(tuples)
-    
+        
+    '''Written by Weidong wang'''
     def add(self,item):
         ''' add a transaction to the transactions table.
             this returns the item_id of the inserted element
