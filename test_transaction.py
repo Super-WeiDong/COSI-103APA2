@@ -52,6 +52,28 @@ def med_db(small_db):
     for j in range(10):
         small_db.delete(rowids[j])
 
+
+''' Weidong Wang'''
+
+
+'''Q4&Q5 Weidong Wang'''
+@pytest.mark.add_select
+def test_add_select(med_db):
+    ''' add a transaction to db, and see that the size changes'''
+    # first we get the initial table
+    trans0 = med_db.select_all()
+
+    # then we add this category to the table and get the new list of rows
+    tran0 ={'amount':100,
+           'category':'a',
+           'date':2022,
+           'description':'None'
+          }
+    rowid = med_db.add(tran0)
+    trans1 = med_db.select_all()
+
+    assert len(trans0)==len(trans1)-1
+
 '''Q6 Jingqian Cheng'''
 @pytest.mark.delete
 def test_delete(med_db):
