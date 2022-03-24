@@ -96,6 +96,12 @@ def process_choice(choice):
     elif choice=='7':
         res = transactions.transactions_by_date()
         print_transactions_groupby_date(res)
+    elif choice=='8':
+        res = transactions.transactions_by_month()
+        print_transactions_groupby_month(res)
+    elif choice=='9':
+        res = transactions.transactions_by_year()
+        print_transactions_groupby_year(res)
     elif choice=='10':
         res = transactions.transactions_by_category()
         print_transactions_groupby_category(res)
@@ -143,6 +149,32 @@ def print_transactions_groupby_date(items):
     print('\n')
     print("%-10s %-10s"%(
         'date','amount'))
+    print('-'*50)
+    for item in items:
+        values = tuple(item.values()) 
+        print("%-10s %-10d"%values)
+
+def print_transactions_groupby_month(items):
+    ''' helper method when group by month '''
+    if len(items)==0:
+        print('no items to print')
+        return
+    print('\n')
+    print("%-10s %-10s"%(
+        'month','amount'))
+    print('-'*50)
+    for item in items:
+        values = tuple(item.values()) 
+        print("%-10s %-10d"%values)
+
+def print_transactions_groupby_year(items):
+    ''' helper method when group by year '''
+    if len(items)==0:
+        print('no items to print')
+        return
+    print('\n')
+    print("%-10s %-10s"%(
+        'year','amount'))
     print('-'*50)
     for item in items:
         values = tuple(item.values()) 

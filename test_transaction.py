@@ -139,6 +139,85 @@ def test_transactions_by_date(med_db):
         elif n['group_by'] == 2022:
             assert n['amount'] == 50
 
+'''Q8 Katherine Cheng'''
+@pytest.mark.transactions_by_month
+def test_transactions_by_month(med_db):
+    ''' add tansactions to db, group by month'''
+    
+    cat0 ={'amount':5,
+           'category':'food',
+           'date':19970407,
+           'description':'Lasagna'
+          }
+    cat1 ={'amount':55,
+           'category':'gardening',
+           'date':19970407,
+           'description':'lawn mower'
+          }
+    cat2 ={'amount':100,
+           'category':'household',
+           'date':20220322,
+           'description':'mop'
+          }
+    cat3 ={'amount':66,
+           'category':'entertainment',
+           'date':20091225,
+           'description':'microphone'
+          }
+    med_db.add(cat0)
+    med_db.add(cat1)
+    med_db.add(cat2)
+    med_db.add(cat3)
+    res = med_db.transactions_by_month()
+    # test whether each group has the correct aggreated amount
+    for n in res:
+        if n['group_by'] == 4:
+            assert n['amount'] == 60
+        elif n['group_by'] == 12:
+            assert n['amount'] == 66
+        elif n['group_by'] == 3:
+            assert n['amount'] == 100
+
+'''Q9 Katherine Cheng'''
+@pytest.mark.transactions_by_year
+def test_transactions_by_year(med_db):
+    ''' add tansactions to db, group by month'''
+    
+    cat0 ={'amount':5,
+           'category':'food',
+           'date':19970407,
+           'description':'Lasagna'
+          }
+    cat1 ={'amount':55,
+           'category':'gardening',
+           'date':19970407,
+           'description':'lawn mower'
+          }
+    cat2 ={'amount':100,
+           'category':'household',
+           'date':20220322,
+           'description':'mop'
+          }
+    cat3 ={'amount':66,
+           'category':'entertainment',
+           'date':20091225,
+           'description':'microphone'
+          }
+    med_db.add(cat0)
+    med_db.add(cat1)
+    med_db.add(cat2)
+    med_db.add(cat3)
+    res = med_db.transactions_by_year()
+    # test whether each group has the correct aggreated amount
+    for n in res:
+        if n['group_by'] == 1997:
+            assert n['amount'] == 60
+        elif n['group_by'] == 2009:
+            assert n['amount'] == 66
+        elif n['group_by'] == 2022:
+            assert n['amount'] == 100
+
+
 '''Q10 Jian He'''
 @pytest.mark.transactions_by_category
 def test_transactions_by_category(med_db):
