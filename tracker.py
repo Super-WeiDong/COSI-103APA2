@@ -96,6 +96,11 @@ def process_choice(choice):
     elif choice=='7':
         res = transactions.transactions_by_date()
         print_transactions_groupby_date(res)
+    elif choice=='10':
+        res = transactions.transactions_by_category()
+        print_transactions_groupby_category(res)
+    elif choice=='11':
+        print_help_menu()
     else:
         print("choice",choice,"not yet implemented")
 
@@ -142,6 +147,23 @@ def print_transactions_groupby_date(items):
     for item in items:
         values = tuple(item.values()) 
         print("%-10s %-10d"%values)
+        
+def print_transactions_groupby_category(items):
+    ''' helper method when group by category '''
+    if len(items)==0:
+        print('no items to print')
+        return
+    print('\n')
+    print("%-10s %-10s"%(
+        'category','amount'))
+    print('-'*50)
+    for item in items:
+        values = tuple(item.values()) 
+        print("%-10s %-10d"%values)
+
+def print_help_menu():
+    ''' print help menu '''
+    print(menu)
 
 def print_category(cat):
     print("%-3d %-10s %-30s"%(cat['rowid'],cat['name'],cat['desc']))

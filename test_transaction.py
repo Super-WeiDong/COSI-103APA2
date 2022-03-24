@@ -83,7 +83,7 @@ def test_delete(med_db):
 
     # then we add this category to the table and get the new list of rows
     cat0 ={'amount':100,
-           'category':'a',
+           'category':'apple',
            'date':2022,
            'description':'None'
           }
@@ -106,22 +106,22 @@ def test_transactions_by_date(med_db):
 
     # then we add this category to the table and get the new list of rows
     cat0 ={'amount':100,
-           'category':'a',
+           'category':'apple',
            'date':2020,
            'description':'None'
           }
     cat1 ={'amount':200,
-           'category':'b',
+           'category':'banana',
            'date':2020,
            'description':'None'
           }
     cat2 ={'amount':100,
-           'category':'c',
+           'category':'coconut',
            'date':2021,
            'description':'None'
           }
     cat3 ={'amount':50,
-           'category':'d',
+           'category':'dragonfruit',
            'date':2022,
            'description':'None'
           }
@@ -137,4 +137,43 @@ def test_transactions_by_date(med_db):
         elif n['group_by'] == 2021:
             assert n['amount'] == 100
         elif n['group_by'] == 2022:
+            assert n['amount'] == 50
+
+'''Q10 Jian He'''
+@pytest.mark.transactions_by_category
+def test_transactions_by_category(med_db):
+    ''' add some tansactions to db, group by category, see if their results are right'''
+    # first we get the initial table
+    
+    
+    # then we add this category to the table and get the new list of rows
+    cat0 ={'amount':100,
+           'category':'apple',
+           'date':2020,
+           'description':'None'
+          }
+    cat1 ={'amount':200,
+           'category':'apple',
+           'date':2020,
+           'description':'None'
+          }
+    cat2 ={'amount':100,
+           'category':'coconut',
+           'date':2021,
+           'description':'None'
+          }
+    cat3 ={'amount':50,
+           'category':'dragonfruit',
+           'date':2022,
+           'description':'None'
+          }
+
+    res = med_db.transactions_by_category()
+    # test whether each group has the correct aggreated amount
+    for n in res:
+        if n['group_by'] == 'apple':
+            assert n['amount'] == 300
+        elif n['group_by'] == 'coconut':
+            assert n['amount'] == 100
+        elif n['group_by'] == 'dragonfruit':
             assert n['amount'] == 50

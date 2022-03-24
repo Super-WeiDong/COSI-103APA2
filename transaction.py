@@ -88,3 +88,13 @@ class Transaction():
         con.commit()
         con.close()
         return to_tran_dict_list2(tuples)
+    
+    '''Written by Jian He'''
+    def transactions_by_category(self):
+        con= sqlite3.connect(self.dbfile)
+        cur = con.cursor()
+        cur.execute('''SELECT category, sum(amount) FROM transactions GROUP BY category''')
+        tuples = cur.fetchall()
+        con.commit()
+        con.close()
+        return to_tran_dict_list2(tuples)
