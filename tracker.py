@@ -26,7 +26,7 @@ In place of SQL queries, we will have method calls.
 
 This app will store the data in a SQLite database ~/tracker.db
 
-Note the actual implementation of the ORM is hidden and so it 
+Note the actual implementation of the ORM is hidden and so it
 could be replaced with PostgreSQL or Pandas or straight python lists
 
 '''
@@ -138,7 +138,7 @@ def print_transactions(items):
         'item #','amount','category','date','description'))
     print('-'*50)
     for item in items:
-        values = tuple(item.values()) 
+        values = tuple(item.values())
         print("%-10s %-10d %-10s %-10d %-30s"%values)
 
 def print_transactions_groupby_date(items):
@@ -151,7 +151,7 @@ def print_transactions_groupby_date(items):
         'date','amount'))
     print('-'*50)
     for item in items:
-        values = tuple(item.values()) 
+        values = tuple(item.values())
         print("%-10s %-10d"%values)
 
 def print_transactions_groupby_month(items):
@@ -164,7 +164,7 @@ def print_transactions_groupby_month(items):
         'month','amount'))
     print('-'*50)
     for item in items:
-        values = tuple(item.values()) 
+        values = tuple(item.values())
         print("%-10s %-10d"%values)
 
 def print_transactions_groupby_year(items):
@@ -177,9 +177,9 @@ def print_transactions_groupby_year(items):
         'year','amount'))
     print('-'*50)
     for item in items:
-        values = tuple(item.values()) 
+        values = tuple(item.values())
         print("%-10s %-10d"%values)
-        
+
 def print_transactions_groupby_category(items):
     ''' helper method when group by category '''
     if len(items)==0:
@@ -190,7 +190,7 @@ def print_transactions_groupby_category(items):
         'category','amount'))
     print('-'*50)
     for item in items:
-        values = tuple(item.values()) 
+        values = tuple(item.values())
         print("%-10s %-10d"%values)
 
 def print_help_menu():
@@ -210,4 +210,3 @@ def print_categories(cats):
 # here is the main call!
 
 toplevel()
-

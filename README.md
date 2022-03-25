@@ -232,3 +232,116 @@ Saving session...completed.
 
 Script done on Wed Mar 23 20:28:18 2022
 (L10cs103a) ➜  COSI-103APA2 git:(main) ✗   
+
+
+# Katherine Cheng's script
+Script started on Thu Mar 24 21:34:26 2022
+[1m[7m%[27m[1m[0m                                                                                        
+ 
+]7;file://hodoshinamesmbp.dyn.brandeis.edu/Users/cxy/cosi103/PA/COSI-103APA2
+[0m[27m[24m[J(base) cxy@hodoshinamesmbp COSI-103APA2 % [K[?2004hppylint tracker.py[?2004l
+
+************* Module tracker
+tracker.py:114:0: C0325: Unnecessary parens after 'return' keyword (superfluous-parens)
+tracker.py:45:0: C0103: Constant name "menu" doesn't conform to UPPER_CASE naming style (invalid-name)
+tracker.py:63:0: C0116: Missing function or method docstring (missing-function-docstring)
+tracker.py:65:4: R1705: Unnecessary "elif" after "return" (no-else-return)
+tracker.py:63:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+tracker.py:63:0: R0912: Too many branches (13/12) (too-many-branches)
+tracker.py:120:4: W0105: String statement has no effect (pointless-string-statement)
+tracker.py:200:0: C0116: Missing function or method docstring (missing-function-docstring)
+tracker.py:203:0: C0116: Missing function or method docstring (missing-function-docstring)
+tracker.py:37:0: W0611: Unused import sys (unused-import)
+tracker.py:37:0: C0411: standard import "import sys" should be placed before "from category import Category" (wrong-import-order)
+
+------------------------------------------------------------------
+Your code has been rated at 9.10/10 (previous run: 9.10/10, +0.00)
+
+[0m[1m[7m%[27m[1m[0m                                                                                        
+ 
+]7;file://hodoshinamesmbp.dyn.brandeis.edu/Users/cxy/cosi103/PA/COSI-103APA2
+[0m[27m[24m[J(base) cxy@hodoshinamesmbp COSI-103APA2 % [K[?2004hpylint tracker.py          transaction.py[?2004l
+
+************* Module transaction
+transaction.py:16:0: C0301: Line too long (135/100) (line-too-long)
+transaction.py:58:0: C0303: Trailing whitespace (trailing-whitespace)
+transaction.py:66:0: C0301: Line too long (130/100) (line-too-long)
+transaction.py:73:0: C0303: Trailing whitespace (trailing-whitespace)
+transaction.py:13:0: W0105: String statement has no effect (pointless-string-statement)
+transaction.py:19:0: W0105: String statement has no effect (pointless-string-statement)
+transaction.py:24:0: W0105: String statement has no effect (pointless-string-statement)
+transaction.py:30:0: W0105: String statement has no effect (pointless-string-statement)
+transaction.py:38:4: W0105: String statement has no effect (pointless-string-statement)
+transaction.py:48:4: W0105: String statement has no effect (pointless-string-statement)
+transaction.py:59:4: W0105: String statement has no effect (pointless-string-statement)
+transaction.py:74:4: W0105: String statement has no effect (pointless-string-statement)
+transaction.py:75:4: C0116: Missing function or method docstring (missing-function-docstring)
+transaction.py:82:4: W0105: String statement has no effect (pointless-string-statement)
+transaction.py:83:4: C0116: Missing function or method docstring (missing-function-docstring)
+transaction.py:112:4: W0105: String statement has no effect (pointless-string-statement)
+transaction.py:113:4: C0116: Missing function or method docstring (missing-function-docstring)
+
+------------------------------------------------------------------
+Your code has been rated at 8.00/10 (previous run: 8.00/10, +0.00)
+
+[0m[1m[7m%[27m[1m[0m                                                                                        
+ 
+]7;file://hodoshinamesmbp.dyn.brandeis.edu/Users/cxy/cosi103/PA/COSI-103APA2
+[0m[27m[24m[J(base) cxy@hodoshinamesmbp COSI-103APA2 % [K[?2004h[7mpytest[27m[27mp[27my[27mt[27me[27ms[27mt[?2004l
+
+[1m================================== test session starts ==================================[0m
+platform darwin -- Python 3.9.7, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+rootdir: /Users/cxy/cosi103/PA/COSI-103APA2, configfile: pytest.ini
+plugins: anyio-2.2.0
+[1mcollecting ... [0m[1m
+collected 10 items                                                                      [0m
+
+test_category.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                                             [ 40%][0m
+test_transaction.py [32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                                        [100%][0m
+
+[32m================================== [32m[1m10 passed[0m[32m in 0.28s[0m[32m ===================================[0m
+[1m[7m%[27m[1m[0m                                                                                        
+ 
+]7;file://hodoshinamesmbp.dyn.brandeis.edu/Users/cxy/cosi103/PA/COSI-103APA2
+[0m[27m[24m[J(base) cxy@hodoshinamesmbp COSI-103APA2 % [K[?2004h[7mtracker.py[27m[10D[27mt[27mr[27ma[27mc[27mk[27me[27mr[27m.[27mp[27my[?2004l
+
+zsh: command not found: tracker.py
+[1m[7m%[27m[1m[0m                                                                                        
+ 
+]7;file://hodoshinamesmbp.dyn.brandeis.edu/Users/cxy/cosi103/PA/COSI-103APA2
+[0m[27m[24m[J(base) cxy@hodoshinamesmbp COSI-103APA2 % [K[?2004hppython [7mtracker.py[27m[10D[27mt[27mr[27ma[27mc[27mk[27me[27mr[27m.[27mp[27my[?2004l
+
+
+0. quit
+1. show categories
+2. add category
+3. modify category
+4. show transactions
+5. add transaction
+6. delete transaction
+7. summarize transactions by date
+8. summarize transactions by month
+9. summarize transactions by year
+10. summarize transactions by category
+11. print this menu
+
+> 8
+
+
+month      amount    
+--------------------------------------------------
+3          200       
+12         5         
+> 9
+
+
+year       amount    
+--------------------------------------------------
+2021       5         
+2022       200       
+> 0
+bye
+[1m[7m%[27m[1m[0m                                                                                        
+ 
+]7;file://hodoshinamesmbp.dyn.brandeis.edu/Users/cxy/cosi103/PA/COSI-103APA2
+[0m[27m[24m[J(base) cxy@hodoshinamesmbp COSI-103APA2 % [K[?2004h
