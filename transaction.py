@@ -89,7 +89,7 @@ class Transaction():
         con.close()
         return to_tran_dict_list2(tuples)
 
-    def transactions_by_month(self) -> dict:
+    def transactions_by_month(self):
         '''Written by Katherine Cheng'''
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
@@ -99,7 +99,7 @@ class Transaction():
         con.close()
         return to_tran_dict_list2(tuples)
 
-    def transactions_by_year(self) -> dict:
+    def transactions_by_year(self):
         '''Written by Katherine Cheng'''
         con= sqlite3.connect(self.dbfile)
         cur = con.cursor()
