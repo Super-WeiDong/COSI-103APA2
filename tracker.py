@@ -57,9 +57,6 @@ menu = '''
 11. print this menu
 '''
 
-
-
-
 def process_choice(choice):
 
     if choice=='0':
